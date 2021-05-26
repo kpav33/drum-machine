@@ -38,7 +38,8 @@ body {
     width: 70%;
     background: var(--background-panel);
     display: grid;
-    grid-template: repeat(2, auto) 50px repeat(2, auto) / auto;
+    grid-template: repeat(2, auto) repeat(3, 1fr) / auto;
+    gap: 15px;
     padding: 1rem;
 
     // Layout for larger screens
@@ -47,6 +48,17 @@ body {
       }
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin-left: 15px;
+  }
+}
+
+// || BUTTONS PAD
 .buttonsPad {
     display: grid;
     grid-template: auto / repeat(3, 1fr);
@@ -58,4 +70,23 @@ button {
     border: none;
     border-radius: 3px;
     padding: 2rem;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.5s;
+
+    &:hover {
+      background: var(--secondary) !important;
+    }
+}
+
+// || DISPLAY BAR
+.display {
+  background: var(--background-app);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+// || SLIDER VOLUME
+.sliderVolume {
+  
 }

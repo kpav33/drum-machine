@@ -10,6 +10,8 @@ function DrumPad(props) {
 
   function play() {
     if (audioRef.current) {
+      audioRef.current.volume = props.value;
+      audioRef.current.currentTime = 0;
       audioRef.current.pause();
       audioRef.current.load();
       // Fixes DOM Exception error that happens when you try to run the test suite for the project (https://developers.google.com/web/updates/2016/03/play-returns-promise)
@@ -23,6 +25,12 @@ function DrumPad(props) {
   function handleKeyDown(e) {
     // Added toUpperCase() to e.key to pass the project's tests, otherwise it is completely unnecessary
     if (e.key.toUpperCase() === props.keyValue) {
+      props.innerText(props.id);
+      // Search for a better solution
+      document.getElementById(props.id).style.background = "#525252";
+      setTimeout(() => {
+        document.getElementById(props.id).style.background = "#ca3e47";
+      }, 300);
       play();
     }
   }

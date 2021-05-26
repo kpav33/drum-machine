@@ -15,6 +15,7 @@ function ButtonsPad(props) {
           id={sound.id}
           keyValue={keys[i]}
           innerText={props.innerText}
+          value={props.value}
         />
       ))}
     </div>
