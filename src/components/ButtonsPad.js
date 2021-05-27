@@ -16,6 +16,7 @@ function ButtonsPad(props) {
           keyValue={keys[i]}
           innerText={props.innerText}
           value={props.value}
+          disabled={props.disabled}
         />
       ))}
     </div>

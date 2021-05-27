@@ -8,21 +8,37 @@ import SliderVolume from "./components/SliderVolume";
 import Switches from "./components/Switches";
 
 function App() {
-  const [innerText, setInnerText] = useState("Fill me up buttercup");
+  // Change display text
+  const [innerText, setInnerText] = useState("Powered up!");
+  // Set app volume
   const [value, setValue] = useState(0.3);
+  // Get true/false boolean from switch
+  const [switches, setSwitches] = useState({
+    powerCheck: true,
+    soundsCheck: false,
+  });
+  const handleChange = (event) => {
+    setSwitches({ ...switches, [event.target.name]: event.target.checked });
+  };
+  console.log(switches);
 
   return (
     <div className="app">
       <div className="panel" id="drum-machine">
         <Title />
-        <ButtonsPad innerText={setInnerText} value={value} />
-        <Display innerText={innerText} />
+        <ButtonsPad
+          innerText={setInnerText}
+          value={value}
+          disabled={!switches.powerCheck}
+        />
+        <Display innerText={innerText} disabled={!switches.powerCheck} />
         <SliderVolume
           innerText={setInnerText}
           value={value}
           setValue={setValue}
+          disabled={!switches.powerCheck}
         />
-        <Switches />
+        <Switches switches={switches} handleChange={handleChange} />
       </div>
     </div>
   );

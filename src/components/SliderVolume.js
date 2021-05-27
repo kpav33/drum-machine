@@ -8,11 +8,15 @@ import VolumeUp from "@material-ui/icons/VolumeUp";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-const muiTheme = createMuiTheme({
+/*const muiTheme = createMuiTheme({
   overrides: {
     MuiSlider: {
       thumb: {
         color: "#ca3e47",
+        boxShadow: "#ca3e47",
+        "&:focus, &:hover, &$active": {
+          boxShadow: "rgba(202, 62, 71, 0.2) 0px 0px 0px 12px",
+        },
       },
       track: {
         color: "#ca3e47",
@@ -23,6 +27,8 @@ const muiTheme = createMuiTheme({
     },
   },
 });
+<ThemeProvider theme={muiTheme}>
+*/
 
 function SliderVolume(props) {
   const handleChange = (event, newValue) => {
@@ -40,7 +46,7 @@ function SliderVolume(props) {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          <ThemeProvider theme={muiTheme}>
+          <ThemeProvider>
             <Slider
               value={props.value}
               onChange={handleChange}
@@ -48,6 +54,7 @@ function SliderVolume(props) {
               min={0}
               max={1}
               step={0.01}
+              disabled={props.disabled}
             />
           </ThemeProvider>
         </Grid>

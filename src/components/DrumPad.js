@@ -36,14 +36,21 @@ function DrumPad(props) {
   }
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    if (!props.disabled) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   });
 
   return (
-    <button className="drum-pad" id={props.id} onClick={handleClick}>
+    <button
+      className="drum-pad"
+      id={props.id}
+      onClick={handleClick}
+      disabled={props.disabled}
+    >
       {props.keyValue}
       <audio
         id={props.keyValue}

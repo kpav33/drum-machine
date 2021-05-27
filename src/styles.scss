@@ -35,7 +35,8 @@ body {
 
 // || PANEL
 .panel {
-    width: 90%;
+    height: 95%;
+    width: auto;
     background: var(--background-panel);
     display: grid;
     grid-template: repeat(2, auto) repeat(3, 1fr) / repeat(2, auto);
@@ -52,6 +53,7 @@ body {
     // Layout for larger screens
     @media only screen and (min-width: 768px) {
         width: 50%;
+        height: auto;
         grid-template: auto / 1fr 1fr;
         grid-template-areas: 
           "buttonsPad title"
@@ -116,10 +118,24 @@ button {
   display: flex;
   justify-content: space-between;
 }
-/*
+
+// Styling when disabled
 button:disabled,
 button[disabled]{
   border: 1px solid #999999;
-  background-color: #cccccc;
+  background-color: #cccccc !important;
   color: #666666;
-}*/
+}
+
+.MuiTypography-root.MuiFormControlLabel-label.Mui-disabled.MuiTypography-body1 {
+  color: white;
+}
+
+// Change color of slider when active and disabled
+.MuiSlider-root {
+  color: var(--primary) !important;
+}
+
+.MuiSlider-root.Mui-disabled {
+  color: grey !important;
+}

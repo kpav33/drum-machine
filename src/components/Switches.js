@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -18,24 +18,13 @@ const RedSwitch = withStyles({
   track: {},
 })(Switch);
 
-function Switches() {
-  const [state, setState] = useState({
-    powerCheck: true,
-    soundsCheck: false,
-  });
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
-  console.log(state);
-
+function Switches({ switches, handleChange }) {
   return (
     <div className="bottomBar">
       <FormControlLabel
         control={
           <RedSwitch
-            checked={state.powerCheck}
+            checked={switches.powerCheck}
             onChange={handleChange}
             name="powerCheck"
             inputProps={{ "aria-label": "power checkbox" }}
@@ -46,10 +35,11 @@ function Switches() {
       <FormControlLabel
         control={
           <RedSwitch
-            checked={state.soundsCheck}
+            checked={switches.soundsCheck}
             onChange={handleChange}
             name="soundsCheck"
             inputProps={{ "aria-label": "sounds checkbox" }}
+            disabled={!switches.powerCheck}
           />
         }
         label="Guitar?"
