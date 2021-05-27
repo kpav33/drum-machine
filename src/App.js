@@ -5,6 +5,7 @@ import ButtonsPad from "./components/ButtonsPad";
 import Title from "./components/Title";
 import Display from "./components/Display";
 import SliderVolume from "./components/SliderVolume";
+import Switches from "./components/Switches";
 
 function App() {
   const [innerText, setInnerText] = useState("Fill me up buttercup");
@@ -21,7 +22,7 @@ function App() {
           value={value}
           setValue={setValue}
         />
-        <p>Bottom text</p>
+        <Switches />
       </div>
     </div>
   );

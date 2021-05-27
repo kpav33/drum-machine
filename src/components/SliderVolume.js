@@ -1,6 +1,5 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
@@ -25,15 +24,7 @@ const muiTheme = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles({
-  root: {
-    width: 200,
-  },
-});
-
 function SliderVolume(props) {
-  const classes = useStyles();
-
   const handleChange = (event, newValue) => {
     props.setValue(newValue);
     props.innerText(`Volume: ${Math.round(newValue * 100)}`);
