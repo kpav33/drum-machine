@@ -35,8 +35,7 @@ body {
 
 // || PANEL
 .panel {
-    height: 95%;
-    width: auto;
+    height: 90vh;
     background: var(--background-panel);
     display: grid;
     grid-template: repeat(2, auto) repeat(3, 1fr) / repeat(2, auto);
@@ -47,13 +46,14 @@ body {
       "sliderVolume sliderVolume"
       "bottomBar bottomBar";
     gap: 15px;
-    padding: 1rem;
+    padding: 0 1rem 1rem 1rem;
     border-radius: 5px;
 
     // Layout for larger screens
     @media only screen and (min-width: 768px) {
-        width: 50%;
+        width: 650px;
         height: auto;
+        padding: 1rem;
         grid-template: auto / 1fr 1fr;
         grid-template-areas: 
           "buttonsPad title"
@@ -122,7 +122,6 @@ button {
 // Styling when disabled
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999;
   background-color: #cccccc !important;
   color: #666666;
 }

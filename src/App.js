@@ -19,17 +19,18 @@ function App() {
   });
   const handleChange = (event) => {
     setSwitches({ ...switches, [event.target.name]: event.target.checked });
+    setInnerText("Powered up!");
   };
-  console.log(switches);
 
   return (
     <div className="app">
       <div className="panel" id="drum-machine">
-        <Title />
+        <Title changeSounds={switches.soundsCheck} />
         <ButtonsPad
           innerText={setInnerText}
           value={value}
           disabled={!switches.powerCheck}
+          changeSounds={switches.soundsCheck}
         />
         <Display innerText={innerText} disabled={!switches.powerCheck} />
         <SliderVolume

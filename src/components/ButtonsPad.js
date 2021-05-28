@@ -1,14 +1,17 @@
 import React from "react";
 
 import DrumPad from "./DrumPad";
-import soundsArr from "../sounds/soundsArr";
+import soundsArr from "../sounds/drums/soundsArr";
+import pianoArr from "../sounds/piano/pianoArr";
 
 function ButtonsPad(props) {
   const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
+  let array = props.changeSounds ? pianoArr : soundsArr;
+
   return (
     <div className="buttonsPad">
-      {soundsArr.map((sound, i) => (
+      {array.map((sound, i) => (
         <DrumPad
           src={sound.src}
           key={sound.id}

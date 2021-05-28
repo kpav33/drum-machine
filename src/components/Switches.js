@@ -42,7 +42,7 @@ function Switches({ switches, handleChange }) {
             disabled={!switches.powerCheck}
           />
         }
-        label="Guitar?"
+        label="Piano"
         labelPlacement="start"
       />
     </div>

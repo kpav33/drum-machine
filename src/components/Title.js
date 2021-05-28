@@ -1,12 +1,15 @@
 import React from "react";
 
 import { FaDrum } from "react-icons/fa";
+import { CgPiano } from "react-icons/cg";
 
-function Title() {
+// CgPiano
+
+function Title(props) {
   return (
     <div className="title">
-      <FaDrum size={32} />
-      <h1>Drum Machine</h1>
+      {props.changeSounds ? <CgPiano size={32} /> : <FaDrum size={32} />}
+      <h1>{props.changeSounds ? "Piano" : "Drum"} Machine</h1>
     </div>
   );
 }

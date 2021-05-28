@@ -5,8 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import VolumeDown from "@material-ui/icons/VolumeDown";
 import VolumeUp from "@material-ui/icons/VolumeUp";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
+// import { createMuiTheme } from "@material-ui/core/styles";
+// import { ThemeProvider } from "@material-ui/styles";
 
 /*const muiTheme = createMuiTheme({
   overrides: {
@@ -46,17 +46,17 @@ function SliderVolume(props) {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          <ThemeProvider>
-            <Slider
-              value={props.value}
-              onChange={handleChange}
-              aria-labelledby="continuous-slider"
-              min={0}
-              max={1}
-              step={0.01}
-              disabled={props.disabled}
-            />
-          </ThemeProvider>
+          {/*<ThemeProvider>*/}
+          <Slider
+            value={props.value}
+            onChange={handleChange}
+            aria-labelledby="continuous-slider"
+            min={0}
+            max={1}
+            step={0.01}
+            disabled={props.disabled}
+          />
+          {/*</ThemeProvider>*/}
         </Grid>
         <Grid item>
           <VolumeUp />
