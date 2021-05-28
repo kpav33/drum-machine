@@ -35,7 +35,8 @@ body {
 
 // || PANEL
 .panel {
-    height: 90vh;
+    height: 100vh;
+    width: 100vh;
     background: var(--background-panel);
     display: grid;
     grid-template: repeat(2, auto) repeat(3, 1fr) / repeat(2, auto);
@@ -47,7 +48,7 @@ body {
       "bottomBar bottomBar";
     gap: 15px;
     padding: 0 1rem 1rem 1rem;
-    border-radius: 5px;
+    border-radius: 0px;
 
     // Layout for larger screens
     @media only screen and (min-width: 768px) {

@@ -1,8 +1,8 @@
 import "./styles.scss";
 import React, { useState } from "react";
 
-import ButtonsPad from "./components/ButtonsPad";
 import Title from "./components/Title";
+import ButtonsPad from "./components/ButtonsPad";
 import Display from "./components/Display";
 import SliderVolume from "./components/SliderVolume";
 import Switches from "./components/Switches";
