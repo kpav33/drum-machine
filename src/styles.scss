@@ -39,7 +39,8 @@ body {
     width: 100vh;
     background: var(--background-panel);
     display: grid;
-    grid-template: repeat(2, auto) repeat(3, 1fr) / repeat(2, auto);
+    grid-template: repeat(2, auto) repeat(3, auto) / repeat(2, auto);
+    align-items: center;
     grid-template-areas: 
       "title title"
       "buttonsPad buttonsPad"
@@ -47,7 +48,7 @@ body {
       "sliderVolume sliderVolume"
       "bottomBar bottomBar";
     gap: 15px;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
     border-radius: 0px;
 
     // Layout for larger screens

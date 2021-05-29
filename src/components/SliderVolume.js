@@ -30,10 +30,10 @@ import VolumeUp from "@material-ui/icons/VolumeUp";
 <ThemeProvider theme={muiTheme}>
 */
 
-function SliderVolume(props) {
+function SliderVolume({ setValue, innerText, value, disabled }) {
   const handleChange = (event, newValue) => {
-    props.setValue(newValue);
-    props.innerText(`Volume: ${Math.round(newValue * 100)}`);
+    setValue(newValue);
+    innerText(`Volume: ${Math.round(newValue * 100)}`);
   };
 
   return (
@@ -41,20 +41,20 @@ function SliderVolume(props) {
       <Typography id="continuous-slider" gutterBottom>
         Volume
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} alignItems="center">
         <Grid item>
           <VolumeDown />
         </Grid>
         <Grid item xs>
           {/*<ThemeProvider>*/}
           <Slider
-            value={props.value}
+            value={value}
             onChange={handleChange}
             aria-labelledby="continuous-slider"
             min={0}
             max={1}
             step={0.01}
-            disabled={props.disabled}
+            disabled={disabled}
           />
           {/*</ThemeProvider>*/}
         </Grid>

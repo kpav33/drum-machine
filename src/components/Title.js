@@ -5,11 +5,11 @@ import { CgPiano } from "react-icons/cg";
 
 // CgPiano
 
-function Title(props) {
+function Title({ changeSounds }) {
   return (
     <div className="title">
-      {props.changeSounds ? <CgPiano size={32} /> : <FaDrum size={32} />}
-      <h1>{props.changeSounds ? "Piano" : "Drum"} Machine</h1>
+      {changeSounds ? <CgPiano size={32} /> : <FaDrum size={32} />}
+      <h1>{changeSounds ? "Piano" : "Drum"} Machine</h1>
     </div>
   );
 }

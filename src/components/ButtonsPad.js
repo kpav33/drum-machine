@@ -4,10 +4,10 @@ import DrumPad from "./DrumPad";
 import soundsArr from "../sounds/drums/soundsArr";
 import pianoArr from "../sounds/piano/pianoArr";
 
-function ButtonsPad(props) {
+function ButtonsPad({ innerText, value, disabled, changeSounds }) {
   const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
-  let array = props.changeSounds ? pianoArr : soundsArr;
+  let array = changeSounds ? pianoArr : soundsArr;
 
   return (
     <div className="buttonsPad">
@@ -17,9 +17,9 @@ function ButtonsPad(props) {
           key={sound.id}
           id={sound.id}
           keyValue={keys[i]}
-          innerText={props.innerText}
-          value={props.value}
-          disabled={props.disabled}
+          innerText={innerText}
+          value={value}
+          disabled={disabled}
         />
       ))}
     </div>

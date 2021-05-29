@@ -1,9 +1,9 @@
 import React from "react";
 
-function Display(props) {
+function Display({ disabled, innerText }) {
   return (
     <div id="display" className="display">
-      <p>{props.disabled ? "No power!" : props.innerText}</p>
+      <p>{disabled ? "No power!" : innerText}</p>
     </div>
   );
 }
