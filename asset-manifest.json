@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/drum-machine/static/css/main.f9fed719.chunk.css",
-    "main.js": "/drum-machine/static/js/main.c0213c1d.chunk.js",
-    "main.js.map": "/drum-machine/static/js/main.c0213c1d.chunk.js.map",
+    "main.css": "/drum-machine/static/css/main.44cf96d5.chunk.css",
+    "main.js": "/drum-machine/static/js/main.705bc364.chunk.js",
+    "main.js.map": "/drum-machine/static/js/main.705bc364.chunk.js.map",
     "runtime-main.js": "/drum-machine/static/js/runtime-main.6e747639.js",
     "runtime-main.js.map": "/drum-machine/static/js/runtime-main.6e747639.js.map",
     "static/js/2.c7e89650.chunk.js": "/drum-machine/static/js/2.c7e89650.chunk.js",
     "static/js/2.c7e89650.chunk.js.map": "/drum-machine/static/js/2.c7e89650.chunk.js.map",
     "index.html": "/drum-machine/index.html",
-    "static/css/main.f9fed719.chunk.css.map": "/drum-machine/static/css/main.f9fed719.chunk.css.map",
+    "static/css/main.44cf96d5.chunk.css.map": "/drum-machine/static/css/main.44cf96d5.chunk.css.map",
     "static/js/2.c7e89650.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.c7e89650.chunk.js.LICENSE.txt",
     "static/media/boom.d89f41a5.wav": "/drum-machine/static/media/boom.d89f41a5.wav",
     "static/media/clap.eb738e52.wav": "/drum-machine/static/media/clap.eb738e52.wav",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.6e747639.js",
     "static/js/2.c7e89650.chunk.js",
-    "static/css/main.f9fed719.chunk.css",
-    "static/js/main.c0213c1d.chunk.js"
+    "static/css/main.44cf96d5.chunk.css",
+    "static/js/main.705bc364.chunk.js"
   ]
 }
