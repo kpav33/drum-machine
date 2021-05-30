@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../container/Context";
 
 import DrumPad from "./DrumPad";
 import soundsArr from "../sounds/drums/soundsArr";
 import pianoArr from "../sounds/piano/pianoArr";
 
-function ButtonsPad({ innerText, value, disabled, changeSounds }) {
+function ButtonsPad() {
+  const { switches } = useContext(Context);
   const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
-  let array = changeSounds ? pianoArr : soundsArr;
+  let array = switches.soundsCheck ? pianoArr : soundsArr;
 
   return (
     <div className="buttonsPad">
@@ -17,9 +19,6 @@ function ButtonsPad({ innerText, value, disabled, changeSounds }) {
           key={sound.id}
           id={sound.id}
           keyValue={keys[i]}
-          innerText={innerText}
-          value={value}
-          disabled={disabled}
         />
       ))}
     </div>

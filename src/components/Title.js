@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../container/Context";
 
 import { FaDrum } from "react-icons/fa";
 import { CgPiano } from "react-icons/cg";
 
-// CgPiano
+function Title() {
+  const { switches } = useContext(Context);
 
-function Title({ changeSounds }) {
   return (
     <div className="title">
-      {changeSounds ? <CgPiano size={32} /> : <FaDrum size={32} />}
-      <h1>{changeSounds ? "Piano" : "Drum"} Machine</h1>
+      {switches.soundsCheck ? <CgPiano size={32} /> : <FaDrum size={32} />}
+      <h1>{switches.soundsCheck ? "Piano" : "Drum"} Machine</h1>
     </div>
   );
 }

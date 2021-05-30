@@ -1,40 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../container/Context";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import VolumeDown from "@material-ui/icons/VolumeDown";
 import VolumeUp from "@material-ui/icons/VolumeUp";
-// import { createMuiTheme } from "@material-ui/core/styles";
-// import { ThemeProvider } from "@material-ui/styles";
 
-/*const muiTheme = createMuiTheme({
-  overrides: {
-    MuiSlider: {
-      thumb: {
-        color: "#ca3e47",
-        boxShadow: "#ca3e47",
-        "&:focus, &:hover, &$active": {
-          boxShadow: "rgba(202, 62, 71, 0.2) 0px 0px 0px 12px",
-        },
-      },
-      track: {
-        color: "#ca3e47",
-      },
-      rail: {
-        color: "black",
-      },
-    },
-  },
-});
-<ThemeProvider theme={muiTheme}>
-*/
-
-function SliderVolume({ setValue, innerText, value, disabled }) {
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-    innerText(`Volume: ${Math.round(newValue * 100)}`);
-  };
+function SliderVolume() {
+  const { value, switches, handleChangeVolume } = useContext(Context);
 
   return (
     <div className="sliderVolume">
@@ -46,17 +20,15 @@ function SliderVolume({ setValue, innerText, value, disabled }) {
           <VolumeDown />
         </Grid>
         <Grid item xs>
-          {/*<ThemeProvider>*/}
           <Slider
             value={value}
-            onChange={handleChange}
+            onChange={handleChangeVolume}
             aria-labelledby="continuous-slider"
             min={0}
             max={1}
             step={0.01}
-            disabled={disabled}
+            disabled={!switches.powerCheck}
           />
-          {/*</ThemeProvider>*/}
         </Grid>
         <Grid item>
           <VolumeUp />

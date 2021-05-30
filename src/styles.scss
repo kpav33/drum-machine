@@ -65,6 +65,7 @@ body {
       }
 }
 
+// || TITLE
 .title {
   display: flex;
   justify-content: center;
@@ -121,7 +122,7 @@ button {
   justify-content: space-between;
 }
 
-// Styling when disabled
+// Styling when machine is disabled
 button:disabled,
 button[disabled]{
   background-color: #cccccc !important;
@@ -132,7 +133,7 @@ button[disabled]{
   color: white;
 }
 
-// Change color of slider when active and disabled
+// Change color of slider when active ors disabled
 .MuiSlider-root {
   color: var(--primary) !important;
 }

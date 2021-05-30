@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../container/Context";
 
-function Display({ disabled, innerText }) {
+function Display() {
+  const { switches, innerText } = useContext(Context);
+
   return (
     <div id="display" className="display">
-      <p>{disabled ? "No power!" : innerText}</p>
+      <p>{!switches.powerCheck ? "No power!" : innerText}</p>
     </div>
   );
 }

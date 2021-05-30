@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../container/Context";
 
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { withStyles } from "@material-ui/core/styles";
 
+// Create a switch with custom styling
 const RedSwitch = withStyles({
   switchBase: {
     color: "#FFFFFF",
@@ -18,7 +20,9 @@ const RedSwitch = withStyles({
   track: {},
 })(Switch);
 
-function Switches({ switches, handleChange }) {
+function Switches() {
+  const { switches, handleChange } = useContext(Context);
+
   return (
     <div className="bottomBar">
       <FormControlLabel

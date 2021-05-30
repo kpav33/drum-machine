@@ -1,13 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
+import { Context } from "../container/Context";
 
-function DrumPad({ id, disabled, src, keyValue, innerText, value }) {
+function DrumPad({ id, src, keyValue }) {
+  const { setInnerText, value, switches } = useContext(Context);
   const audioRef = useRef();
 
   function handleClick() {
-    innerText(id);
+    setInnerText(id);
     play();
   }
 
+  // Use a ref to get the drum pad that was used and play it
   function play() {
     if (audioRef.current) {
       audioRef.current.volume = value;
@@ -22,10 +25,11 @@ function DrumPad({ id, disabled, src, keyValue, innerText, value }) {
     }
   }
 
+  // Allow users to play sounds by clicking the appropriate key on the keyboard
   function handleKeyDown(e) {
     // Added toUpperCase() to e.key to pass the project's tests, otherwise it is completely unnecessary
     if (e.key.toUpperCase() === keyValue) {
-      innerText(id);
+      setInnerText(id);
       // Search for a better solution
       document.getElementById(id).style.background = "#525252";
       setTimeout(() => {
@@ -36,7 +40,7 @@ function DrumPad({ id, disabled, src, keyValue, innerText, value }) {
   }
 
   useEffect(() => {
-    if (!disabled) {
+    if (switches.powerCheck) {
       window.addEventListener("keydown", handleKeyDown);
     }
     return () => {
@@ -49,7 +53,7 @@ function DrumPad({ id, disabled, src, keyValue, innerText, value }) {
       className="drum-pad"
       id={id}
       onClick={handleClick}
-      disabled={disabled}
+      disabled={!switches.powerCheck}
     >
       {keyValue}
       <audio id={keyValue} src={src} className="clip" ref={audioRef} />
